@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
+  <link rel="stylesheet" href="styles/11-todoList.css">
+</head>
+
+<body>
+
+  <p class="title">Todo List Practice 1</p>
+  <input placeholder="Todo name" class="js-todo-input todo-input">
+  <button class="js-add-button add-button" onclick="addTodo()">Add</button>
+  <button class="js-reset-button reset-button" onclick="resetList1()">Reset Button</button>
+
+  <div class="js-todo-list"></div>
+
+  <p class="title title2">Todo List Practice 2</p>
+  <div class="improved-todo todo-grid">
+    <div>
+      <input placeholder="Todo name" class="js-todo-input2 todo-input">
+    </div>
+    <div>
+      <input type="date" class="js-todo-ymd todo-ymd">
+    </div>
+    <div>
+      <button class="js-add-button add-button" onclick="addTodoImproved()">Add</button>
+    </div>
+    <div>
+      <button class="js-reset-button reset-button" onclick="resetList2()">Reset Button</button>
+    </div>
+    
+  </div>
+
+  <div class="js-todo-list2 todo-list-grid todo-list2"></div>
+
+  <script src="scripts/11-todoList.js"></script>
+</body>
+</html>
