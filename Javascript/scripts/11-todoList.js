@@ -4,9 +4,9 @@ const inputElement = document.querySelector('.js-todo-input')
 const inputElement2 = document.querySelector('.js-todo-input2')
 const dateElement = document.querySelector('.js-todo-ymd')
 
-inputElement.addEventListener('keydown', (event) => {
+document.body.addEventListener('keydown', (event) => {
   if(event.key === 'Enter') {
-    addTodo();
+    addTodoImproved()
   }
 })
 

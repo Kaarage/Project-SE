@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Functions</title>
+</head>
+
+<body>
+
+  <button onclick="" class = "js-button">Click</button>
+
+  <script>
+
+    const buttonElement = document.querySelector('.js-button');
+    
+    const eventListener = () => {
+      console.log('button clicked2');
+    }
+
+    buttonElement.addEventListener('click', () => {
+      console.log('button clicked');
+    });
+
+    buttonElement.addEventListener('click', eventListener);
+    buttonElement.removeEventListener('click', eventListener);
+
+    console.log([1, -3, 5].filter((value, index) => {
+      return value >= 0;
+    }));
+
+    console.log([1,2,3].map((value, index) => {
+      return value * 2;
+    }));
+
+    /*
+    function greeting (){
+      console.log('hello');
+    }
+    greeting();
+
+    const tempfunc = function(){
+      console.log('hello2');
+    };
+
+    console.log(tempfunc);
+    console.log(typeof tempfunc);
+    tempfunc();
+
+    const object1 = {
+      num: 2,
+      fun: function greeting() {
+        console.log('hello3');
+      }
+    };
+
+    object1.fun();
+
+    function display(param) {
+      console.log(param);
+    }
+
+    display(2);
+
+    function run(param) {
+      param();
+    }
+    
+    run(function() {
+      console.log('hello4')
+    });
+
+    */
+
+    setTimeout(function() {
+      console.log('timeout');
+    }, 3000);
+
+    console.log('next line');
+
+    setInterval(function() {
+      console.log('interval');
+    }, 3000);
+
+    ['go hong', 'gan', 'loll'].forEach((value, index) => {
+      console.log(value);
+      console.log(index);
+    });
+
+    const regularFunction = function(param, param2) {
+      console.log('REG SUP')
+    };
+
+    const arrowFunction = (param, param2) => {
+      console.log('SUP SUP');
+      console.log(param);
+    };
+
+    arrowFunction('brr brr patapim');
+
+
+  </script>
+</body>
+
+</html>
