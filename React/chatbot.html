@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Chatbot</title>
+</head>
+<body>
+  <div class="js-container"></div>
+
+  <script src="react-testscript.js">  </script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+
+
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    const button = <button>Click me</button>;
+    const paragraph = <p>Hello, world! skibidi rizzler</p>;
+    function ChatInput(){
+      return(
+        <>    
+          <input placeholder="Send a message to Chatbot" size="30"/>
+          <button>Send</button>
+        </>
+      );
+    }
+
+    function ChatMessage(props){
+      const message = props.message;
+      return (
+        <div>
+          {message}
+          <img src="images/user.png" width="50" height="50" />
+        </div>
+      );
+    }
+
+    const app = (
+      <>
+        <ChatInput />
+        <ChatMessage message="hello chatbot" />
+        <ChatMessage message="Hello, how are you?" />
+      </>
+    );
+    
+
+    const container = document.querySelector('.js-container');
+    ReactDOM.createRoot(container).render(app);
+  </script>
+  
+</body>
+</html>
