@@ -1,8 +1,10 @@
-import {cart} from '../data/cart.js';
+import {cart, addToCart} from '../data/cart.js';
+import {products} from '../data/products.js';
+import { formatCurrency } from './utils/money.js';
 
 let productsHTML = '';
 
-function updateCart() {
+export function updateCartQuantity() {
       let cartQuantity = 0;
 
       cart.forEach((product) => {
@@ -12,7 +14,18 @@ function updateCart() {
       document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
 };
 
-updateCart();
+function addedFlag(productId) {
+  const addedMessage = document.querySelector(".js-added-to-cart-" + productId);
+    addedMessage.classList.add("add-trigger");
+
+    clearTimeout(fadeTimeout);
+
+    fadeTimeout = setTimeout(() => {
+      addedMessage.classList.remove("add-trigger");
+    }, 1000);
+}
+
+updateCartQuantity();
 
 products.forEach((product) => {
   productsHTML = productsHTML +=`
@@ -35,7 +48,7 @@ products.forEach((product) => {
       </div>
 
       <div class="product-price">
-        $${(product.priceCents / 100).toFixed(2)}
+        $${formatCurrency(product.priceCents)}
       </div>
 
       <div class="product-quantity-container">
@@ -78,36 +91,12 @@ let fadeTimeout;
 document.querySelectorAll('.js-add-to-cart')
 .forEach((button) => {
   button.addEventListener('click', () => {
-    const productName = button.dataset.productName;
     const productId = button.dataset.productId;
 
-    const item = cart.find(item => item.productId === button.dataset.productId);
-    if(item){
-      item.quantity += parseInt(document.querySelector(".js-quantity-selector-" + productId).value);
-    }
-
-    else {
-      cart.push({
-      productName: productName,
-      productId: productId,
-      quantity: parseInt(document.querySelector(".js-quantity-selector-" + productId).value)
-      });
-    }
-
-    updateCart();
-
-    const addedMessage = document.querySelector(".js-added-to-cart-" + productId);
-    addedMessage.classList.add("add-trigger");
-
-    clearTimeout(fadeTimeout);
-
-    fadeTimeout = setTimeout(() => {
-      addedMessage.classList.remove("add-trigger");
-    }, 1000);
-    
-    
-
-    console.log(cart);
+    addToCart(button, productId);
+    updateCartQuantity();
+    addedFlag(productId);
+  
   });
 
 });
