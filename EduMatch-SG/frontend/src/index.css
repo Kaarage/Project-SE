@@ -1,0 +1,27 @@
+:root {
+  font-family: 'Google Sans', sans-serif;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: 'Google Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app-layout {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  min-height: 100vh;
+  background-color: #eaeef1;
+}
+
+.main {
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}

@@ -1,0 +1,54 @@
+.functions-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+@media (min-width: 1200px) {
+  .student-profile-container {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1500px) {
+  .student-profile-container {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+.search-schools-button {
+  align-items: start;
+  text-align: left;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: white;  
+  margin-bottom: 35px;
+}
+
+.search-schools-button:hover {
+  cursor: pointer;
+  background-color: rgb(222, 235, 245); 
+}
+
+.big-button-icons {
+  height: 35px;
+  display: block;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.button-name-text {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.button-info-text {
+  font-size: 12px;
+  color: gray;
+  font-weight: 500;
+}

@@ -1,0 +1,20 @@
+.content-container {
+  padding: 20px;
+  font-size: 16px;
+}
+
+.greeting-text {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.user-name {
+  color: #007bff;
+  font-style: italic;
+}
+
+.student-info-text {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
